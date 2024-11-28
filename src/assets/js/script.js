@@ -198,4 +198,5 @@ document.getElementById('player-form').addEventListener('submit', function (even
   }
 
   toggle();
+  
 });
