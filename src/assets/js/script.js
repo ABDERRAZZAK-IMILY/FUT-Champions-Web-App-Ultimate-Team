@@ -197,27 +197,39 @@
 //           </div>
 //         `;
 
-//         document.getElementById('players-container').appendChild(playerCard);
+// const positionContainer = player.position;
+// if (positionContainer) {
+//   positionContainer.innerHTML = '';
+//   positionContainer.appendChild(playerCard);
+// }
+    // document.getElementById('players-container').appendChild(playerCard);
 //     });
 
 // });
 
 
 
-// Get the necessary DOM elements
+
+
+
+
+
+
+
+
+
+
+
 const addPlayerButton = document.getElementById('addplayer');
 const popup = document.getElementById('popup');
 
-// Toggle visibility of the popup
 function toggle() {
   popup.classList.toggle('hidden');
 }
 
-// Handle player form submission
 document.getElementById('player-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
-  // Collect form data
   const name = document.getElementById('name').value;
   const position = document.getElementById('position').value;
   const rating = document.getElementById('rating').value;
@@ -236,7 +248,6 @@ document.getElementById('player-form').addEventListener('submit', function (even
   const nationalityImage = nationalityFile ? URL.createObjectURL(nationalityFile) : '';
   const playerImage = imageSrcFile ? URL.createObjectURL(imageSrcFile) : '';
 
-  // Create a new player card element
   const playerCard = document.createElement('div');
   playerCard.classList.add('player-card', 'w-40', 'h-[300px]', 'rounded', 'p-4', 'text-white', 'm-2');
 
@@ -304,13 +315,11 @@ document.getElementById('player-form').addEventListener('submit', function (even
         </div>
   `;
 
-  // Find the correct position in the formation and add the card there
   const positionContainer = document.getElementById(position);
   if (positionContainer) {
     positionContainer.innerHTML = '';
     positionContainer.appendChild(playerCard);
   }
 
-  // Hide the popup after submission
   toggle();
 });
