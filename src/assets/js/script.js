@@ -187,7 +187,11 @@ document.getElementById('player-form').addEventListener('submit', function (even
   `;
 
   const positionContainer = document.getElementById(position);
-  if (positionContainer) {
+  if ((positionContainer).innerHTML.includes('<div class="wrapper">')){
+    alert("player exist");
+  }
+   else {
+
     positionContainer.innerHTML = '';
     positionContainer.appendChild(playerCard);
   }
