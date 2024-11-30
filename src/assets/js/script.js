@@ -260,7 +260,7 @@ document.getElementById('position').addEventListener('change', function () {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const url = '/src/assets/js/players.json';
+  const url = 'https://abderrazzak-imily.github.io/plyer-api/';
   const response = await fetch(url);
   const data = await response.json();
   const players = data.players;
