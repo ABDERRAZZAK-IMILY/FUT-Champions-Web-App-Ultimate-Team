@@ -257,3 +257,102 @@ document.getElementById('position').addEventListener('change', function () {
 });
 
 
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const url = '/src/assets/js/players.json';
+  const response = await fetch(url);
+  const data = await response.json();
+  const players = data.players;
+  
+  const changementSection = document.getElementById('changments');
+
+  players.forEach(player => {
+      const playerCard = createPlayerCard(player);
+      changementSection.appendChild(playerCard);
+
+      playerCard.addEventListener('click', function () {
+          const positionContainer = document.getElementById(player.position);
+          if (positionContainer.children.length === 0) {
+              positionContainer.appendChild(playerCard);
+              alert(`${player.name} moved to ${player.position}`);
+          } else {
+            changementSection.appendChild(playerCard);
+              alert(`${player.position} move to changement`);
+          }
+      });
+  });
+});
+
+function createPlayerCard(player) {
+  const playerCard = document.createElement('div');
+  playerCard.classList.add('player-card', 'w-40', 'h-[300px]', 'rounded', 'p-4', 'text-white', 'm-2');
+  playerCard.innerHTML = `
+      <img onclick="this.parentElement.remove()" src="/src/assets/img/signs-close-icon.png" alt="" class="w-[1rem]">
+      <div class="wrapper">
+          <div class="relative w-[100px] h-[180px] bg-cover bg-center bg-[url('https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png')] transition-all ease-in">
+              <div class="relative flex text-[#e9cc74] px-[0.3rem]">
+                  <div class="absolute py-[0.8rem_0] text-xs uppercase font-light">
+                      <div class="text-[1rem] mt-5">${player.rating}</div>
+                      <div>${player.position}</div>
+                      <div class="block">
+                          <img src="${player.flag}" alt="${player.name} nationality" class="w-[1rem] h-[14px] object-contain" />
+                      </div>
+                      <div class="block">
+                          <img src="${player.logo}" alt="Club logo" class="w-[1rem] h-[14px] object-contain" />
+                      </div>
+                  </div>
+                  <div class="w-[70px] h-[80px] mx-auto overflow-hidden">
+                      <img src="${player.photo}" alt="${player.name}" class="w-full h-full object-contain relative right-[-1rem] bottom-0" />
+                  </div>
+              </div>
+              <div class="w-full flex justify-around text-[#88e635] text-[0.7rem] font-bold uppercase">
+                  <span class="ml-[0.4rem] text-shadow-lg">${player.position}</span>
+              </div>
+              <div class="relative">
+                  <div class="text-[#e9cc74] w-[90%] mx-auto">
+                      <div class="text-center w-[100%] text-[0.6rem] uppercase border-b-2 border-[#e9cc74]/[0.1]">
+                          <span class="block text-shadow-lg">${player.name}</span>
+                      </div>
+                      <div class="flex justify-center">
+                          <div class="pr-[1.5rem] border-r-2 border-[#e9cc74]/[0.1]">
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[0.3rem]">${player.pace}</span>
+                                  <span class="font-light">PAC</span>
+                              </div>
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[0.3rem]">${player.shooting}</span>
+                                  <span class="font-light">SHO</span>
+                              </div>
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[ 0.3rem]">${player.passing}</span>
+                                  <span class="font-light">PAS</span>
+                              </div>
+                          </div>
+                          <div>
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[0.3rem]">${player.dribbling}</span>
+                                  <span class="font-light">DRI</span>
+                              </div>
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[0.3rem]">${player.defending}</span>
+                                  <span class="font-light">DEF</span>
+                              </div>
+                              <div class="flex items-center text-[0.5rem] uppercase">
+                                  <span class="font-bold mr-[0.3rem]">${player.physical}</span>
+                                  <span class="font-light">PHY</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  `;
+    const closeButton = playerCard.querySelector('img');
+    closeButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        playerCard.remove(); 
+    });
+  return playerCard;
+}
