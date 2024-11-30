@@ -1,6 +1,5 @@
 const formationPositions = ['GK', 'ST1', 'ST2', 'LM', 'CM1', 'CM2', 'RM', 'LB', 'CB1', 'CB2', 'RB'];
 const changementSection = document.getElementById('changments');
-let selectedPlayer = null;
 const addPlayerButton = document.getElementById('addplayer');
 const popup = document.getElementById('popup');
 
@@ -35,7 +34,6 @@ document.getElementById('player-form').addEventListener('submit', function (even
   const playerImage = imageSrcFile ? URL.createObjectURL(imageSrcFile) : '';
 
 
-  // GK-specific stats (only if position is GK)
   const diving = position === 'GK' ? document.getElementById('diving').value : null;
   const handling = position === 'GK' ? document.getElementById('handling').value : null;
   const kicking = position === 'GK' ? document.getElementById('kicking').value : null;
