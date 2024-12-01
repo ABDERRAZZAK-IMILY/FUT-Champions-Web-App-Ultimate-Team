@@ -40,6 +40,33 @@ document.getElementById('player-form').addEventListener('submit', function (even
   const reflexes = position === 'GK' ? document.getElementById('reflexes').value : null;
   const positioning = position === 'GK' ? document.getElementById('positioning').value : null;
 
+
+
+// Validation of form
+if (position !== 'GK' && (!pace || !shooting || !passing || !dribbling || !defending || !physical)) {
+  alert('Please fill in all non-GK stats.');
+  return;
+}
+
+if (position === 'GK' && (!diving || !handling || !kicking || !reflexes || !positioning)) {
+  alert('Please fill in all GK stats.');
+  return;
+}
+
+if (!clubFile) {
+  alert('Please upload a club logo.');
+  return;
+}
+
+if (!nationalityFile) {
+  alert('Please upload a nationality flag.');
+  return;
+}
+
+if (!imageSrcFile) {
+  alert('Please upload a player image.');
+  return;
+}
   const playerCard = document.createElement('div');
   playerCard.classList.add('player-card', 'w-40', 'h-[300px]', 'rounded', 'p-4', 'text-white', 'm-2');
   playerCard.dataset.position = position;
