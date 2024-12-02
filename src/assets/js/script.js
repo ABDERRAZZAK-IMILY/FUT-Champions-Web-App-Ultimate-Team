@@ -8,10 +8,6 @@ function toggle() {
 }
 
 
-
-
-
-
 document.getElementById('player-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -214,10 +210,6 @@ if (!imageSrcFile) {
   toggle();
   addClickListener(playerCard);
 });
-
-function isFormationFilled() {
-  return formationPositions.every(position => document.getElementById(position).children.length > 0);
-}
 
 function movePlayerToChangement(playerCard) {
   changementSection.appendChild(playerCard);
