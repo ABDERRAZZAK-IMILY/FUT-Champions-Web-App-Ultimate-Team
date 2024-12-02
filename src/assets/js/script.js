@@ -1,6 +1,4 @@
-const formationPositions = ['GK', 'ST1', 'ST2', 'LM', 'CM1', 'CM2', 'RM', 'LB', 'CB1', 'CB2', 'RB'];
-const changementSection = document.getElementById('changments');
-const addPlayerButton = document.getElementById('addplayer');
+const changementsection = document.getElementById('changments');
 const popup = document.getElementById('popup');
 
 function toggle() {
@@ -212,7 +210,7 @@ if (!imageSrcFile) {
 });
 
 function movePlayerToChangement(playerCard) {
-  changementSection.appendChild(playerCard);
+  changementsection.appendChild(playerCard);
   alert('Player moved to substitutions.');
 
   addDoubleClickListener(playerCard);
@@ -234,7 +232,7 @@ function addDoubleClickListener(playerCard) {
   playerCard.addEventListener('dblclick', function () {
     const positionContainer = document.getElementById(playerCard.dataset.position);
 
-    if (changementSection.contains(playerCard)) {
+    if (changementsection.contains(playerCard)) {
       movePlayerToFormation(playerCard);
     } 
     else if (positionContainer.contains(playerCard)) {
@@ -248,7 +246,7 @@ function addClickListener(playerCard) {
     playerCard.addEventListener('click', function () {
       const positionContainer = document.getElementById(playerCard.dataset.position);
   
-      if (changementSection.contains(playerCard)) {
+      if (changementsection.contains(playerCard)) {
         movePlayerToFormation(playerCard);
       } 
       else if (positionContainer.contains(playerCard)) {
@@ -282,11 +280,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   const data = await response.json();
   const players = data.players;
   
-  const changementSection = document.getElementById('changments');
+  const changementsection = document.getElementById('changments');
 
   players.forEach(player => {
       const playerCard = createPlayerCard(player);
-      changementSection.appendChild(playerCard);
+      changementsection.appendChild(playerCard);
 
       playerCard.addEventListener('click', function () {
           const positionContainer = document.getElementById(player.position);
@@ -294,7 +292,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               positionContainer.appendChild(playerCard);
               alert(`${player.name} moved to ${player.position}`);
           } else {
-            changementSection.appendChild(playerCard);
+            changementsection.appendChild(playerCard);
               alert(`${player.position} move to changement`);
           }
       });
@@ -373,3 +371,7 @@ function createPlayerCard(player) {
     });
   return playerCard;
 }
+
+
+
+
