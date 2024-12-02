@@ -16,8 +16,6 @@
 - [Fonctionnalités](#fonctionnalités)
 - [Technologies utilisées](#technologies-utilisées)
 - [Installation](#installation)
-- [Contribution](#contribution)
-- [Licence](#licence)
 
 ## Fonctionnalités
 
