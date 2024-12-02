@@ -35,7 +35,6 @@ document.getElementById('player-form').addEventListener('submit', function (even
   const positioning = position === 'GK' ? document.getElementById('positioning').value : null;
 
 
-
 // Validation of form
 if (position !== 'GK' && (!pace || !shooting || !passing || !dribbling || !defending || !physical)) {
   alert('Please fill in all non-GK stats.');
@@ -371,7 +370,4 @@ function createPlayerCard(player) {
     });
   return playerCard;
 }
-
-
-
 
