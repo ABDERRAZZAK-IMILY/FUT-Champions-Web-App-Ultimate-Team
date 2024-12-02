@@ -1,8 +1,5 @@
 # FUT Champions Ultimate Team
 
-[![forthebadge](http://forthebadge.com/images/badges/made-with-love.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/built-with-heart.svg)](http://forthebadge.com)
-
 [![GitHub issues](https://img.shields.io/github/issues/username/fut-champions-ultimate-team.svg)](https://github.com/username/fut-champions-ultimate-team/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
 
@@ -63,3 +60,5 @@
 1. **Cloner le dépôt GitHub** :
    ```bash
    git clone https://github.com/username/fut-champions-ultimate-team.git
+### Ateur
+ABDERRAZZAK IMILY
