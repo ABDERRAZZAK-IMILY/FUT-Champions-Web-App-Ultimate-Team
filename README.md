@@ -10,8 +10,6 @@ Bienvenue dans le projet FUT Champions ! Cette application web permet aux utilis
 - [Technologies Utilisées](#technologies-utilisées)
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Contribution](#contribution)
-- [Licence](#licence)
 - [Auteur](#auteur)
 
 ## Fonctionnalités
@@ -49,27 +47,6 @@ Pour exécuter ce projet localement, suivez ces étapes :
 4. Téléchargez des images pour le club et la nationalité du joueur.
 5. Soumettez le formulaire pour créer une carte de joueur, qui apparaîtra sur les positions désignées sur le terrain.
 6. Vous pouvez double-cliquer sur les cartes de joueur pour les déplacer entre le terrain et la section des remplaçants.
-
-## Contribution
-Les contributions sont les bienvenues ! Si vous avez des suggestions d'améliorations ou de nouvelles fonctionnalités, n'hésitez pas à ouvrir une issue ou à soumettre une pull request.
-
-1. Forkez le dépôt.
-2. Créez votre branche de fonctionnalité :
-    ```bash
-    git checkout -b feature/VotreFonctionnalité
-    ```
-3. Commitez vos modifications :
-    ```bash
-    git commit -m "Ajout d'une fonctionnalité"
-    ```
-4. Poussez vers la branche :
-    ```bash
-    git push origin feature/VotreFonctionnalité
-    ```
-5. Ouvrez une pull request.
-
-## Licence
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
 
 ## Auteur
 Imily Abderrazzak - [Votre Profil GitHub](https://github.com/votreutilisateur)
