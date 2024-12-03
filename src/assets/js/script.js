@@ -220,7 +220,6 @@ document.getElementById('player-form').addEventListener('submit', function (even
 // Fonction pour déplacer le joueur vers les changements (substitutions)
 function movePlayerToChangement(playerCard) {
   changementsection.appendChild(playerCard);
-  alert('Joueur déplacé vers les substitutions.');
 
   addDoubleClickListener(playerCard);
 }
@@ -232,7 +231,6 @@ function movePlayerToFormation(playerCard) {
 
   if (positionContainer.children.length === 0) {
     positionContainer.appendChild(playerCard);
-    alert('Joueur déplacé vers la formation.');
   }
 
   addDoubleClickListener(playerCard);
@@ -298,10 +296,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const positionContainer = document.getElementById(player.position);
       if (positionContainer.children.length === 0) {
         positionContainer.appendChild(playerCard);
-        alert(`${player.name} déplacé vers ${player.position}`);
       } else {
         changementsection.appendChild(playerCard);
-        alert(`${player.position} déplacé vers les changements`);
       }
     });
   });
